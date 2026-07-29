@@ -61,6 +61,14 @@ app.config["DEBUG"] = True  # ← intentional demo
 # ============================================================
 DEMO_API_KEY = "GHAS_DEMO_ABCDEFGHIJKLMNOP12345678"  # fake – never real
 
+PRIVATE_KEY = "-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACAixezDL2Tt5NV6/ZpqvSpq+XuDbzaLJV4ypeAkHl5iAAAAAJitDkTxrQ5E
+8QAAAAtzc2gtZWQyNTUxOQAAACAixezDL2Tt5NV6/ZpqvSpq+XuDbzaLJV4ypeAkHl5iAA
+AAAECRg9UsKm5KsAJT0HonEgOTI11q4HyVf3UlBiDAOhMLtyLF7MMvZO3k1Xr9mmq9Kmr5
+e4NvNoslXjKl4CQeXmIAAAAAEWtleS0xNzg1MzI5NjQ0MDQ4AQIDBA==
+-----END OPENSSH PRIVATE KEY-----" # fake - never real
+
 # ── Database helpers ──────────────────────────────────────────────────────────
 
 DB_PATH = os.environ.get("BLOG_DB", "blog.db")
