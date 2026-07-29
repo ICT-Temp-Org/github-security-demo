@@ -53,21 +53,23 @@ app.config["DEBUG"] = True  # ← intentional demo
 # ⚠️  DEMO SECRET FIXTURE (fake / inert)
 #     For secret-scanning demonstration.
 #
-#     This token is entirely synthetic and non-functional.
-#     It is formatted as GHAS_DEMO_<24 uppercase alphanumeric
-#     characters> so that a custom GitHub secret-scanning
-#     pattern can detect it.  See README.md § Secret Scanning
-#     for instructions on creating the custom pattern.
+#     These secrets are all fake
 # ============================================================
-DEMO_API_KEY = "GHAS_DEMO_ABCDEFGHIJKLMNOP12345678"  # fake – never real
+DEMO_API_KEY = "GHAS_DEMO_ABCDEFGHIJKLMNOP12345678"
 
-PRIVATE_KEY = "-----BEGIN OPENSSH PRIVATE KEY-----
+PRIVATE_KEY = """-----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
 QyNTUxOQAAACAixezDL2Tt5NV6/ZpqvSpq+XuDbzaLJV4ypeAkHl5iAAAAAJitDkTxrQ5E
 8QAAAAtzc2gtZWQyNTUxOQAAACAixezDL2Tt5NV6/ZpqvSpq+XuDbzaLJV4ypeAkHl5iAA
 AAAECRg9UsKm5KsAJT0HonEgOTI11q4HyVf3UlBiDAOhMLtyLF7MMvZO3k1Xr9mmq9Kmr5
 e4NvNoslXjKl4CQeXmIAAAAAEWtleS0xNzg1MzI5NjQ0MDQ4AQIDBA==
------END OPENSSH PRIVATE KEY-----" # fake - never real
+-----END OPENSSH PRIVATE KEY-----"""
+
+GH_PAT = "ghp__HOiqh6NmRLNH4VKgmsEEMO4sK3JnqIH2"
+
+AWS_KEY = "AKIA_WNEp49LldUDlQRUVgKZXlgzxs2ZciHie"
+
+NI_NUMBER = "QQ 12 34 56 A"
 
 # ── Database helpers ──────────────────────────────────────────────────────────
 
