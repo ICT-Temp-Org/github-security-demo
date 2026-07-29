@@ -37,7 +37,7 @@ MarkupSafe==1.0
 click==6.7
 
 # requests 2.18.0 – CVE-2018-18074 (credential forwarding after redirect).
-requests==2.18.0
+requests==2.34.2
 
 # cryptography 2.1.4 – multiple old CVEs (RSA/ECDSA, PKCS#12 issues).
 cryptography==2.1.4
