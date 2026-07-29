@@ -43,4 +43,4 @@ requests==2.18.0
 cryptography==2.1.4
 
 # Pillow 5.0.0 – multiple CVEs (buffer overflows, out-of-bounds reads).
-Pillow==5.0.0
+Pillow==12.3.0
