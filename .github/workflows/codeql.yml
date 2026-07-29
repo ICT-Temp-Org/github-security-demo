@@ -1,0 +1,52 @@
+# ============================================================
+# CodeQL Advanced Setup – Python (security-extended)
+#
+# This workflow runs GitHub's CodeQL code scanner against the
+# Python source code using the security-extended query suite,
+# which covers OWASP Top 10, CWE Top 25, and many more.
+#
+# Expected alerts (intentional vulnerabilities in app.py):
+#   • py/flask-hardcoded-secret   – hard-coded Flask secret key
+#   • py/sql-injection            – SQL injection in /demo/sqli
+#   • py/reflected-xss            – reflected XSS in /demo/xss
+#   • py/path-injection           – path traversal in /demo/path
+#   • py/unsafe-deserialization   – pickle.loads in /demo/pickle
+# ============================================================
+
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    # Rerun weekly (Monday 03:00 UTC) to catch newly published queries.
+    - cron: "0 3 * * 1"
+
+jobs:
+  analyse:
+    name: Analyse Python
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialise CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: python
+          # security-extended adds OWASP Top 10 and CWE Top 25 queries
+          # on top of the default security-and-quality suite.
+          queries: security-extended
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:python"

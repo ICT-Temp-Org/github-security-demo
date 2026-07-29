@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# SQLite databases (generated at runtime)
+*.db
+*.sqlite3
+
+# Environment variables / local config
+.env
+.env.*
+
+# Test artefacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE artefacts
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,46 @@
+# ============================================================
+# ⚠️  DELIBERATELY OUTDATED DEPENDENCIES
+#     FOR DEPENDABOT DEMONSTRATION PURPOSES ONLY
+# ============================================================
+#
+# These version pins are intentionally old and carry known security
+# advisories so that GitHub Dependabot will raise alerts and open
+# upgrade pull requests.
+#
+# DO NOT use these versions in a real application.
+#
+# Note: the exact number of Dependabot alerts may vary over time as
+# new advisories are published to the GitHub Advisory Database and
+# older ones are periodically retired.  If expected alerts are not
+# visible, check the repository's Security > Dependabot alerts tab
+# and ensure Dependabot is enabled in Settings > Code security.
+#
+# For a safe, CI-compatible dependency set, see requirements-test.txt.
+# ============================================================
+
+# Flask 0.12.4 – end-of-life; multiple known advisories.
+Flask==0.12.4
+
+# Werkzeug 0.14.1 – CVE-2019-14806 (debugger PIN bypass).
+Werkzeug==0.14.1
+
+# Jinja2 2.10 – CVE-2020-28493 (ReDoS via urlize filter).
+Jinja2==2.10
+
+# itsdangerous 0.24 – old; required by Flask 0.12.x.
+itsdangerous==0.24
+
+# MarkupSafe 1.0 – old; required by Jinja2 2.10.
+MarkupSafe==1.0
+
+# click 6.7 – old; required by Flask 0.12.x.
+click==6.7
+
+# requests 2.18.0 – CVE-2018-18074 (credential forwarding after redirect).
+requests==2.18.0
+
+# cryptography 2.1.4 – multiple old CVEs (RSA/ECDSA, PKCS#12 issues).
+cryptography==2.1.4
+
+# Pillow 5.0.0 – multiple CVEs (buffer overflows, out-of-bounds reads).
+Pillow==5.0.0
