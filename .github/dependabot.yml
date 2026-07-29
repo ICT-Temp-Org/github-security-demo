@@ -1,0 +1,39 @@
+# ============================================================
+# Dependabot configuration
+#
+# Dependabot will:
+#   • Monitor Python dependencies in requirements.txt for security
+#     advisories and open upgrade pull requests automatically.
+#   • Monitor GitHub Actions workflow versions for updates.
+#
+# Expected pip alerts (intentional – see requirements.txt):
+#   • Flask 0.12.4, Werkzeug 0.14.1, Jinja2 2.10, requests 2.18.0,
+#     cryptography 2.1.4, Pillow 5.0.0 – all have known advisories.
+#
+# Note: the exact number of open alerts may change over time as
+# advisories are added or retired from the GitHub Advisory Database.
+# ============================================================
+
+version: 2
+updates:
+
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore(deps)"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "chore(actions)"

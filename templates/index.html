@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}GHAS Demo Blog – Posts{% endblock %}
+
+{% block content %}
+    {% if demo_warning %}
+    <div style="background:#f8d7da;border:1px solid #dc3545;border-radius:6px;padding:0.75rem 1rem;margin-bottom:1rem;font-size:0.85rem;">
+        ⚠️&nbsp; <strong>Demo mode:</strong> {{ demo_warning }}
+    </div>
+    {% endif %}
+
+    <h1>Blog Posts</h1>
+
+    {% for post in posts %}
+    <article>
+        <h2><a href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h2>
+        <p class="meta">By {{ post['author'] }}</p>
+    </article>
+    {% else %}
+    <p>No posts found.</p>
+    {% endfor %}
+
+    <details class="demo-routes">
+        <summary>⚠️ Intentionally Vulnerable Demo Endpoints</summary>
+        <p>The following routes contain deliberate security flaws to produce GHAS alerts.
+           <strong>Do not use these patterns in real applications.</strong></p>
+        <ul>
+            <li><strong>SQL Injection (CWE-89):</strong>
+                <a href="/demo/sqli?q=hello"><code>/demo/sqli?q=hello</code></a></li>
+            <li><strong>Reflected XSS (CWE-79):</strong>
+                <a href="/demo/xss?name=World"><code>/demo/xss?name=World</code></a></li>
+            <li><strong>Path Traversal (CWE-22):</strong>
+                <a href="/demo/path?file=README.md"><code>/demo/path?file=README.md</code></a></li>
+            <li><strong>Unsafe Pickle Deserialisation (CWE-502):</strong>
+                <code>POST /demo/pickle</code> with Base64-encoded pickle payload</li>
+        </ul>
+    </details>
+{% endblock %}
