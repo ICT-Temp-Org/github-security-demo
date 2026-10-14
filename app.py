@@ -71,6 +71,8 @@ AWS_KEY = "AKIA_WNEp49LldUDlQRUVgKZXlgzxs2ZciHie"
 
 NI_NUMBER = "QQ 12 34 56 A"
 
+GH_FG_PAT = "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"
+
 # ── Database helpers ──────────────────────────────────────────────────────────
 
 DB_PATH = os.environ.get("BLOG_DB", "blog.db")
